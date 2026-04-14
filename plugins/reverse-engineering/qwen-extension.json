@@ -1,0 +1,7 @@
+{
+  "name": "reverse-engineering",
+  "version": "1.0.0",
+  "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
+  "agents": "agents",
+  "skills": "skills"
+}

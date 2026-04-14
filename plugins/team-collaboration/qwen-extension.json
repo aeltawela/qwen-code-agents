@@ -1,0 +1,7 @@
+{
+  "name": "team-collaboration",
+  "version": "1.2.0",
+  "description": "Team workflows, issue management, standup automation, and developer experience optimization",
+  "agents": "agents",
+  "commands": "commands"
+}

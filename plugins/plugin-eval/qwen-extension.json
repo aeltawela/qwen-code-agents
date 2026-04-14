@@ -1,0 +1,8 @@
+{
+  "name": "plugin-eval",
+  "version": "1.0.0",
+  "description": "",
+  "agents": "agents",
+  "commands": "commands",
+  "skills": "skills"
+}

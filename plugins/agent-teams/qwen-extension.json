@@ -1,0 +1,8 @@
+{
+  "name": "agent-teams",
+  "version": "1.0.2",
+  "description": "Orchestrate multi-agent teams for parallel code review, hypothesis-driven debugging, and coordinated feature development using Claude Code's Agent Teams",
+  "agents": "agents",
+  "commands": "commands",
+  "skills": "skills"
+}

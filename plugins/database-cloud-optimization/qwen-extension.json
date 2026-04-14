@@ -1,0 +1,7 @@
+{
+  "name": "database-cloud-optimization",
+  "version": "1.2.0",
+  "description": "Database query optimization, cloud cost optimization, and scalability improvements",
+  "agents": "agents",
+  "commands": "commands"
+}

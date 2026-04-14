@@ -1,0 +1,8 @@
+{
+  "name": "systems-programming",
+  "version": "1.2.2",
+  "description": "Systems programming with Rust, Go, C, and C++ for performance-critical and low-level development",
+  "agents": "agents",
+  "commands": "commands",
+  "skills": "skills"
+}

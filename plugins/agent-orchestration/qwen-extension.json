@@ -1,0 +1,7 @@
+{
+  "name": "agent-orchestration",
+  "version": "1.2.1",
+  "description": "Multi-agent system optimization, agent improvement workflows, and context management",
+  "agents": "agents",
+  "commands": "commands"
+}
