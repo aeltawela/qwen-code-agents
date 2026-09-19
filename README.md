@@ -2,6 +2,8 @@
 
 > **Adapted for Qwen Code** — 92 plugins, 202 agents, 183 skills, and 105 commands now working with Qwen 3.6
 
+Maintained repository: [aeltawela/qwen-code-agents](https://github.com/aeltawela/qwen-code-agents). The current tree includes the 2026-09-14 upstream sync from [wshobson/agents](https://github.com/wshobson/agents) at commit `4236bb91`.
+
 A comprehensive production-ready system combining **202 specialized AI agents**, **16 multi-agent workflow orchestrators**, **183 agent skills**, and **105 commands** organized into **92 focused, single-purpose plugins** — adapted for [Qwen Code](https://qwenlm.github.io/qwen-code-docs/en/).
 
 ## Credits & Attribution
@@ -103,7 +105,7 @@ qwen auth api-key
 ### Step 3: Clone This Repo
 
 ```bash
-git clone https://github.com/SumeetGond/qwen-code-agents.git
+git clone https://github.com/aeltawela/qwen-code-agents.git
 cd qwen-code-agents
 ```
 
@@ -488,4 +490,4 @@ To add new agents, skills, or commands:
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-Original work by [Seth Hobson](https://github.com/wshobson). Qwen Code adaptation by [Sumeet Gond](https://github.com/SumeetGond).
+Original work by [Seth Hobson](https://github.com/wshobson). Qwen Code adaptation maintained by [aeltawela](https://github.com/aeltawela).

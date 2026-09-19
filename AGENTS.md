@@ -2,6 +2,8 @@
 
 Production-ready agentic-workflow building blocks: **94 plugins** (92 local + 2 external), **202 agents**, **183 skills**, **105 commands**, adapted for [Qwen Code](https://qwenlm.github.io/qwen-code-docs/en/).
 
+Canonical repository: [aeltawela/qwen-code-agents](https://github.com/aeltawela/qwen-code-agents). `main` is synced with [wshobson/agents](https://github.com/wshobson/agents) at upstream commit `4236bb91` (2026-09-14).
+
 This repository is a **fork/adaptation** of [wshobson/agents](https://github.com/wshobson/agents) by [Seth Hobson](https://github.com/wshobson). All original plugin content, agent expertise, skill knowledge, and command workflows are his work. This adaptation wires that content to Qwen Code's extension format.
 
 If you are an agent working in this repo, read this file first; it is the canonical context file.
