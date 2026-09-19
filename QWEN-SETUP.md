@@ -61,7 +61,7 @@ For a local bulk install, use the repository helper:
 # Install ALL 92 plugins
 python3 tools/install-qwen-extensions.py
 
-# Or install specific plugins only
+# Or install multiple selected plugins in one run
 python3 tools/install-qwen-extensions.py --plugins python-development backend-development full-stack-orchestration
 
 # List available plugins

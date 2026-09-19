@@ -123,7 +123,12 @@ def uninstall_all(ext_dir: Path, plugins: list[dict]):
 
 def main():
     parser = argparse.ArgumentParser(description="Install Qwen Code extensions")
-    parser.add_argument("--plugins", nargs="+", help="Specific plugins to install")
+    parser.add_argument(
+        "--plugins",
+        nargs="+",
+        metavar="PLUGIN",
+        help="Install one or more selected plugins in a single run",
+    )
     parser.add_argument("--list", action="store_true", help="List available plugins")
     parser.add_argument("--uninstall", action="store_true", help="Remove all installed extensions")
     parser.add_argument("--symlink", action="store_true", help="Use symlinks instead of copying")

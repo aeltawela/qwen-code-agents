@@ -123,7 +123,7 @@ For a local bulk install, use this repository's Python helper:
 # Install ALL 92 plugins as Qwen Code extensions
 python3 tools/install-qwen-extensions.py
 
-# Or install specific plugins only
+# Or install multiple selected plugins in one run
 python3 tools/install-qwen-extensions.py --plugins python-development backend-development conductor
 
 # View available plugins
