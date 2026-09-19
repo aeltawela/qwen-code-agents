@@ -111,15 +111,23 @@ cd qwen-code-agents
 
 ### Step 4: Install Extensions
 
+For a single plugin, use Qwen Code's native installer (recommended):
+
+```bash
+qwen extensions install --consent https://github.com/aeltawela/qwen-code-agents:python-development
+```
+
+For a local bulk install, use this repository's Python helper:
+
 ```bash
 # Install ALL 92 plugins as Qwen Code extensions
-python tools/install-qwen-extensions.py
+python3 tools/install-qwen-extensions.py
 
 # Or install specific plugins only
-python tools/install-qwen-extensions.py --plugins python-development backend-development conductor
+python3 tools/install-qwen-extensions.py --plugins python-development backend-development conductor
 
 # View available plugins
-python tools/install-qwen-extensions.py --list
+python3 tools/install-qwen-extensions.py --list
 ```
 
 ### Step 5: Start Using
@@ -442,9 +450,9 @@ qwen-code-agents/
 Converts Claude plugins to Qwen Code extensions:
 
 ```bash
-python tools/convert-to-qwen.py              # Full conversion
-python tools/convert-to-qwen.py --dry-run    # Preview only
-python tools/convert-to-qwen.py --restore    # Revert to Claude model names
+python3 tools/convert-to-qwen.py              # Full conversion
+python3 tools/convert-to-qwen.py --dry-run    # Preview only
+python3 tools/convert-to-qwen.py --restore    # Revert to Claude model names
 ```
 
 ### install-qwen-extensions.py
@@ -452,10 +460,10 @@ python tools/convert-to-qwen.py --restore    # Revert to Claude model names
 Installs extensions into Qwen Code's directory:
 
 ```bash
-python tools/install-qwen-extensions.py                # Install all
-python tools/install-qwen-extensions.py --list         # List available
-python tools/install-qwen-extensions.py --plugins X Y  # Install specific
-python tools/install-qwen-extensions.py --uninstall    # Remove all
+python3 tools/install-qwen-extensions.py                # Install all
+python3 tools/install-qwen-extensions.py --list         # List available
+python3 tools/install-qwen-extensions.py --plugins X Y  # Install specific
+python3 tools/install-qwen-extensions.py --uninstall    # Remove all
 ```
 
 ## Contributing
@@ -463,8 +471,8 @@ python tools/install-qwen-extensions.py --uninstall    # Remove all
 To add new agents, skills, or commands:
 
 1. Create or edit files in the appropriate plugin directory under `plugins/`
-2. Run `python tools/convert-to-qwen.py` to regenerate Qwen extension files
-3. Run `python tools/install-qwen-extensions.py` to reinstall
+2. Run `python3 tools/convert-to-qwen.py` to regenerate Qwen extension files
+3. Run `python3 tools/install-qwen-extensions.py` to reinstall
 4. Restart Qwen Code to pick up changes
 
 ## Resources

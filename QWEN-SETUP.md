@@ -38,29 +38,37 @@ The conversion has already been applied. If you need to re-run:
 
 ```bash
 # Preview changes
-python tools/convert-to-qwen.py --dry-run
+python3 tools/convert-to-qwen.py --dry-run
 
 # Apply conversion
-python tools/convert-to-qwen.py
+python3 tools/convert-to-qwen.py
 
 # Restore original Claude model references
-python tools/convert-to-qwen.py --restore
+python3 tools/convert-to-qwen.py --restore
 ```
 
 ### 4. Install Extensions
 
+For a single plugin, use Qwen Code's native installer (recommended):
+
+```bash
+qwen extensions install --consent https://github.com/aeltawela/qwen-code-agents:python-development
+```
+
+For a local bulk install, use the repository helper:
+
 ```bash
 # Install ALL 92 plugins
-python tools/install-qwen-extensions.py
+python3 tools/install-qwen-extensions.py
 
 # Or install specific plugins only
-python tools/install-qwen-extensions.py --plugins python-development backend-development full-stack-orchestration
+python3 tools/install-qwen-extensions.py --plugins python-development backend-development full-stack-orchestration
 
 # List available plugins
-python tools/install-qwen-extensions.py --list
+python3 tools/install-qwen-extensions.py --list
 
-# Use symlinks (edits reflect immediately, needs admin on Windows)
-python tools/install-qwen-extensions.py --symlink
+# Legacy symlink mode (prefer `qwen extensions link` for live local development)
+python3 tools/install-qwen-extensions.py --symlink
 ```
 
 ### 5. Start Using
@@ -156,22 +164,22 @@ plugins/plugin-name/
 ### convert-to-qwen.py
 
 ```bash
-python tools/convert-to-qwen.py              # Full conversion
-python tools/convert-to-qwen.py --dry-run    # Preview only
-python tools/convert-to-qwen.py --restore    # Revert to Claude models
-python tools/convert-to-qwen.py --skip-models      # Skip model updates
-python tools/convert-to-qwen.py --skip-extensions   # Skip JSON generation
-python tools/convert-to-qwen.py --skip-qwen-md      # Skip QWEN.md generation
+python3 tools/convert-to-qwen.py              # Full conversion
+python3 tools/convert-to-qwen.py --dry-run    # Preview only
+python3 tools/convert-to-qwen.py --restore    # Revert to Claude models
+python3 tools/convert-to-qwen.py --skip-models      # Skip model updates
+python3 tools/convert-to-qwen.py --skip-extensions   # Skip JSON generation
+python3 tools/convert-to-qwen.py --skip-qwen-md      # Skip QWEN.md generation
 ```
 
 ### install-qwen-extensions.py
 
 ```bash
-python tools/install-qwen-extensions.py                # Install all
-python tools/install-qwen-extensions.py --list         # List plugins
-python tools/install-qwen-extensions.py --plugins X Y  # Install specific
-python tools/install-qwen-extensions.py --symlink      # Use symlinks
-python tools/install-qwen-extensions.py --uninstall    # Remove all
+python3 tools/install-qwen-extensions.py                # Install all
+python3 tools/install-qwen-extensions.py --list         # List plugins
+python3 tools/install-qwen-extensions.py --plugins X Y  # Install specific
+python3 tools/install-qwen-extensions.py --symlink      # Use symlinks
+python3 tools/install-qwen-extensions.py --uninstall    # Remove all
 ```
 
 ## Troubleshooting
@@ -194,7 +202,7 @@ qwen auth api-key
 If `qwen-max` isn't available on your plan, edit the agent files to use `qwen-plus` or `inherit`:
 ```bash
 # Quick fix: change all agents to use inherit (your session's model)
-python tools/convert-to-qwen.py --restore
+python3 tools/convert-to-qwen.py --restore
 # Then manually set all to inherit if needed
 ```
 

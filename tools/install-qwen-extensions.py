@@ -7,11 +7,11 @@ This script copies/symlinks plugins into Qwen Code's extension directory:
   - macOS/Linux: ~/.qwen/extensions/
 
 Usage:
-    python tools/install-qwen-extensions.py                  # Install all plugins
-    python tools/install-qwen-extensions.py --plugins python-development backend-development
-    python tools/install-qwen-extensions.py --list            # List available plugins
-    python tools/install-qwen-extensions.py --uninstall       # Remove all installed extensions
-    python tools/install-qwen-extensions.py --symlink         # Use symlinks instead of copy
+    python3 tools/install-qwen-extensions.py                  # Install all plugins
+    python3 tools/install-qwen-extensions.py --plugins python-development backend-development
+    python3 tools/install-qwen-extensions.py --list            # List available plugins
+    python3 tools/install-qwen-extensions.py --uninstall       # Remove all installed extensions
+    python3 tools/install-qwen-extensions.py --symlink         # Legacy symlink mode
 """
 
 import argparse
@@ -93,17 +93,11 @@ def install_plugin(plugin: dict, ext_dir: Path, use_symlink: bool = False) -> bo
     if (source / "agents").is_dir():
         shutil.copytree(source / "agents", target / "agents", dirs_exist_ok=True)
 
-    # Copy commands/ directory — nest under plugin name for namespaced slash commands
-    # This makes commands/setup.md → commands/plugin-name/setup.md
-    # So Qwen Code registers them as /plugin-name:setup instead of just /setup
+    # Copy commands/ at the manifest-declared root. Qwen Code handles command
+    # conflicts by applying the extension prefix; nesting commands manually
+    # prevents the commands from being discovered.
     if (source / "commands").is_dir():
-        namespaced_cmd_dir = target / "commands" / plugin["name"]
-        namespaced_cmd_dir.mkdir(parents=True, exist_ok=True)
-        for cmd_file in (source / "commands").iterdir():
-            if cmd_file.is_file():
-                shutil.copy2(cmd_file, namespaced_cmd_dir / cmd_file.name)
-            elif cmd_file.is_dir():
-                shutil.copytree(cmd_file, namespaced_cmd_dir / cmd_file.name, dirs_exist_ok=True)
+        shutil.copytree(source / "commands", target / "commands", dirs_exist_ok=True)
 
     # Copy skills/ directory
     if (source / "skills").is_dir():
@@ -139,7 +133,7 @@ def main():
     plugins = get_available_plugins()
 
     if not plugins:
-        print("No converted plugins found. Run 'python tools/convert-to-qwen.py' first.")
+        print("No converted plugins found. Run 'python3 tools/convert-to-qwen.py' first.")
         sys.exit(1)
 
     # ── List mode ──
@@ -205,7 +199,7 @@ def main():
     print(f"  1. Start Qwen Code: qwen")
     print(f"  2. List skills: /skills")
     print(f"  3. List agents: /agents manage")
-    print(f"  4. Try a command: /<plugin-name>:<command-name>")
+    print(f"  4. Try a command: /<command-name> (Qwen prefixes conflicts automatically)")
 
 
 if __name__ == "__main__":

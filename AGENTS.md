@@ -43,7 +43,7 @@ The adaptation is reproducible: this repo equals an upstream commit plus `tools/
 1. Fetch the upstream commit you want and extract its tree.
 2. Replace `plugins/` with upstream's.
 3. Drop the harness-specific dirs listed above.
-4. Run `python tools/convert-to-qwen.py` to regenerate `qwen-extension.json`, `QWEN.md`, and the model aliases.
+4. Run `python3 tools/convert-to-qwen.py` to regenerate `qwen-extension.json`, `QWEN.md`, and the model aliases.
 5. Refresh `.claude-plugin/marketplace.json` from upstream.
 6. Re-apply the README/QWEN-SETUP count edits and this file.
 
